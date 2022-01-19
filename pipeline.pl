@@ -94,7 +94,7 @@ for (my $a=0 ; $a <= 1; $a++){
 }
 #die " $gzipunf1 doesnt exist" unless -e $gzipunf1;
     
-my $trimgalore_command = "~/tools/TrimGalore-0.6.6/trim_galore --paired $gzipunf1 $gzipunf2";
+my $trimgalore_command = "~/tools/TrimGalore-0.6.6/trim_galore -j 1 -e 0.1 -q 20 -a GATCGGAAGAGCACACGTCTGAACTCCA --paired $gzipunf1 $gzipunf2";
 my $trimmed1 =  "unfixrm_".$fid."_R1_001.cor_val_1.fq.gz";
 my $trimmed2 =  "unfixrm_".$fid."_R2_001.cor_val_2.fq.gz";
 print "$trimgalore_command\n";
